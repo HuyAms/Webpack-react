@@ -10,6 +10,11 @@ module.exports = ({mode, presets} = {mode: "production", presets: []}) => {
         module: {
           rules: [
             {
+              test: /\.(js|jsx)$/,
+              exclude: /node_modules/,
+              use: "babel-loader"
+            },
+            {
               test: /\.jpe?g$/,
               use: [{
                 loader: "url-loader",
@@ -24,7 +29,9 @@ module.exports = ({mode, presets} = {mode: "production", presets: []}) => {
           filename: "bundle.js"
         },
         plugins: [
-          new HtmlWebpackPlugin()
+          new HtmlWebpackPlugin({
+            template: "./src/index.html"
+          })
         ]
       },
       modeConfig(mode),

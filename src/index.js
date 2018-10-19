@@ -1,6 +1,6 @@
-import nav from './nav';
-import {top, bottom} from './footer';
-import makeButton from './button';
-import {red, blue, makeColorStyle} from './button-styles';
+import React from "react";
+import ReactDOM from "react-dom";
+import "./main.css";
+import App from "./App";
 
-console.log(nav(), top, bottom, makeButton("my frist button"), makeColorStyle('cyan'));
+ReactDOM.render(<App />, document.getElementById("index"));
