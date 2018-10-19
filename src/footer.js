@@ -1,3 +1,5 @@
+import "./footer.css";
+
 const top = "top";
 const bottom = "bottom";
 
