@@ -9,7 +9,12 @@ module.exports = ({mode} = {mode: "production"}) =>
         rules: [
           {
             test: /\.jpe?g$/,
-            use: ["url-loader"]
+            use: [{
+              loader: "url-loader",
+              options: {
+                limit: 5000
+              }
+            }]
           }
         ]
       },
