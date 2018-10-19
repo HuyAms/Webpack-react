@@ -5,6 +5,14 @@ const webpackMerge = require("webpack-merge");
 module.exports = ({mode} = {mode: "production"}) =>
     webpackMerge({
       mode,
+      module: {
+        rules: [
+          {
+            test: /\.jpe?g$/,
+            use: ["url-loader"]
+          }
+        ]
+      },
       output: {
         filename: "bundle.js"
       },
