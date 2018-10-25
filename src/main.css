@@ -6,3 +6,5 @@ body {
 ::placeholder {
     color: gray;
 }
+
+/*This is the comment. You should not see it in the production*/
