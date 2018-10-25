@@ -3,8 +3,9 @@ import React from "react";
 const App = () => {
   return (
       <div>
-        <p>React here!</p>
+        <p>Welcome to webpack</p>
       </div>
   );
 };
+
 export default App;

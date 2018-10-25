@@ -1,10 +1,12 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const webpack = require('webpack');
 
 module.exports = () => ({
   devtool: "source-map",
   output: {
     filename: "bundle.js",
     chunkFilename: '[name].chunk.js',
+    publicPath: "/"
   },
   module: {
     rules: [
@@ -15,6 +17,7 @@ module.exports = () => ({
     ]
   },
   devServer: {
+    contentBase: './dist',
     port: 8000,
     hot: true,
     open: true,
@@ -24,8 +27,6 @@ module.exports = () => ({
     new HtmlWebpackPlugin({
       template: "./src/index.html"
     }),
-    new HtmlWebpackPlugin({
-      template: "./src/index.html"
-    })
+    new webpack.HotModuleReplacementPlugin()
   ]
 })
